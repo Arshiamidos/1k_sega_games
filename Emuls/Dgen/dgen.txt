@@ -1,0 +1,198 @@
+==============================================================
+
+    #####x#x##x         x###x###
+     x##     x##x     x##      x#                                 
+      ##       ###   ###               xxxx                       
+      ##        ##   ###             x#   ##   ###x#x##           
+      ##        ##x  ###      ####  ###x#x###  ###    ##          
+      ##       ###   ###       ###  ###        x##    ##          
+     ###      ###     ###x     ###   ##x       ##x   x##          
+    x#####x#x#x         ###x#x##      x###x    x##   ##x          
+                                                                  
+     it's all just a little bit of history repeating...
+
+==============================================================
+
+DGen is a Genesis/Megadrive emulator, which currently
+runs under Windows 95/98/2000 and possibly NT using DirectX.
+
+(The name is spelt "Capital D, Captial G, small e, small n",
+and pronounced "Dee Jen".)
+
+At this point I'll slip in the old standard disclaimer:
+  I do not accept responsibility for any effects, adverse or otherwise,
+  that this code may have on you, your computer, your sanity, your dog, 
+  and anything else that you can think of. Use it at your own risk.
+
+Current Web Site is http://www.dtmnt.com/
+==============================================================
+What's New?
+-----------
+V1.21
++ Switched to Richard Mitton's excellent RAZE Z80 emulator, which fixes
+  the out of time music on some games.
+  Most of you described the problem as 'the music isn't in
+  sync with the game'. Anyway, this is now fixed.
+
++ Sonic1/2/3, Aladdin are all fine now. I imagine there will be others.
+  Eternal Champions's music is okay and you can play the game with Musashi.
+
++ DAC sound plays at the right pitch now (e.g. 'Sega' chord, 'Eswat' speech)
+
+- No shadows yet (e.g. Sonic2 bonus game)
+
+Info
+----
+The default keys to the emulator are
+Up,Down,Left,Right = Cursor keys (not on the numpad)
+A,B,C              = A,S,D
+Start              = Enter
+X,Y,Z,Mode         = Q,W,E,R
+
+V1.20
++ Fullscreen mode now works with high resolution graphics cards
+  that don't support 320x240x16.
+
++ Triple buffering in fullscreen modes (disabled by default - select
+  Graphics/Triple Buffering to enable it).
+
++ Fixed a DMA bug (fixes EA intro a bit)
+
++ Thinner mode now scales to the whole screen if Any Size is enabled.
+  (e.g. Golden Axe front end, TMNT, SF2)
+
+* Made Any Size the default
+
+- No interpolation/bilinear filtering/Direct3D/Glide/3dFX
+  support yet. Don't e-mail about this, I know you want it.
+
+i There are still bugs in the jumping on Altered Beast, Alex Kidd,
+  Rolling Thunder 2, and Eternal Champions.
+  Another misemulation affects Columns's score.
+
+i Speed is still bad. I know this because I myself don't have
+  a fast computer.
+
+V1.19
++ Fixed SRAM problems (e.g. Phantasy Star 4)
+  Let me know what SRAM works now.
++ H-Interrupt fix (from 1.18) seems to have fixed a lot of games e.g.
+  Sonic 1 Level 4, Mortal Kombat, Toe Jam and Earl (these games
+  previously never worked at the same time - now they do).
+
+V1.181
++ Fixed Escape in redefine keys routine
+V1.18
+
++ Added .GYM logging at the request of Zophar
+  (with and without DAC logging)
++ New DirectInput code
+
+I've been tweaking a few things. If anything is broke and you
+can't cope let me know within the next few weeks (date now is 17th Jan '00)
+and I'll recompile 1.17 with GYM support.
+In particular Sonic2 doesn't run (!), but if you switch to Musashi and
+back you can work around this.
+
+Also, the keyboard codes have changed.
+If you have control trouble, click on the first entry in the Input menu.
+This will reset the key codes.
+
+If you haven't seen already, I'm doing some ROM testing on my
+homepage (www.dtmnt.com). Go see if you can help - thanks!
+
+
+--------------------------------------------------------------
+NOTE - In the DOS version, press F1,F2 or F3 to strech the screen,
+F1 being the fastest. The DOS version doesn't have sound.
+Type dgen -help for more info on how to work it.
+The rest of this file refers to the Windows version.
+--------------------------------------------------------------
+
+Automatically created configuration file is DGEN.INI,
+which is usually created in the same directory
+as where you run it (but Windows can be a bit unpredictable so you
+may have to hunt around for it!).
+
+Q: How fast is it?
+A: Roughly speaking it compares like this:
+
+Slow                                         Fast/
+/Jerky graphics                              Smooth Graphics
+  <------------------------------------------>
+                DGEN            Genecyst
+             Megasis            KGen
+
+but hey - you can compare for yourself!
+If you have a Pentium-I or below then I advise you to use KGen or Genecyst.
+If you have a Pentium-III you should have no trouble.
+
+Q: Why use it rather than Genecyst and KGen?
+A1: It has interlace mode support
+A2: DOS programs sometimes have trouble with newer graphics cards and
+   sound cards. (It's happened to me a couple of times.)
+
+Q: What's the compatibilty like?
+A: Pretty good.
+
+---------------------------------------------------------------
+
+.gsx files are a bit like gs0-gs9 save states, so you may be able
+to swap save states between emulators. Anyone got the actual
+specs for Genecyst or KGen save states?
+
+*****************************************************************
+
+Homepage for DGen and DTMNT is:
+  http://www.dtmnt.com/
+
+Dave's e-mail
+dave@dtmnt.com
+Take notice of this before sending me any mail:<br>
+- No ROM requests.
+- Asking is always better than demanding.
+- If it's about the Mac version, don't ask me.
+- Ask before sending files bigger than 100k.
+- I will not be adding Sega CD, 32X, or DSP (e.g. Virtua Racing) support to DGen.
+- I know that DGen needs a fast computer to run.
+- I know about the lagging/slow sound problems.
+- I don't want my web-site redesigning.
+- I know about the fullscreen problems.
+- I know that interpolation/higher resolution would be nice.
+- MAME is much better that DTMNT now. (Ah yes but in its day 'twas the best there was.)
+
+Technical Bits
+--------------
+
++ Scroll A/B Low/High and Window
++ Per screen offset supported
++ Per tile offset supported
++ Per line offset supported
++ 16-bit Stereo Sound
++ 68000 and Z80 supported
++ YM2612 supported (e.g. Music)
++ Z80 DAC supported (e.g. Drums and speech)
++ PSG chip supported (e.g. extra music/sound bits)
++ Raster effects supported (e.g. Toe-jam, sonic3)
++ H-ints supported a bit (e.g. Moonwalker)
++ Save RAM supported
+
+Credits
+-------
+
+* Neill Corlett for the very fast StarScream 68000 emulator
+* Richard Mitton for the very fast and accurate RAZE Z80 emulator
+* Tatsuyuki Satoh for the YM2612 emulation
+* Me for putting it all together
+* Me for Genesis and VDP emulation
+* Me for the C++/assembler graphics rendering.
+* Microsoft's *good* programmers who have designed DirectDraw/Input/Sound.
+* Karl Stenerud for the accurate Musashi 68000 emu
+* Alex Townsend for the Zipped ROM support
+* Richard Bannister and countless other Mac programmers
+  for the MacOS version and loads of code.
+* In particular John Stiles for the line-based renderer
+* Joe Groff for the Linux version and loads more code!
+* Flavio Morsoletto for a huge amount of technical Megadrive info.
+--------------
+

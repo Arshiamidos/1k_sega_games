@@ -1,0 +1,229 @@
+------------------------------------------------------------------------------
+           'MEGASIS'   MEGADRIVE / GENESIS Emulator for Windows95/98
+                     Copyright(C) 1998-2001 J.T. / BORI
+
+------------------------------------------------------------------------------
+
+-----------------------
+About: MEGASIS
+-----------------------
+
+  MEGASIS is Genesis/MegaDrive emulator for Windows95/98.
+
+-----------------------
+System Requirements:
+-----------------------
+
+  CPU
+    Pentium 133Mhz or faster. (Pentium2 recommended)
+  OS
+    Windows95/Windows98
+  other
+    [GraphicCard] Complying with DirectDraw.
+      (HardwareAccelaration recommendedÅj
+    [SoundCard] Complying with DirectSound.
+    [Joystic] Complying with DirectInput
+
+  (IMPORTANT: not work with "4bit color" and "8bit color" mode.
+   only "16bit color" and "32bit color" mode.)
+
+-----------------------
+Support File Format:
+-----------------------
+
+  BIN or SMD files.
+  It will automatically detect the type of file. 
+  but it may not work with select to strange file type.
+
+  zip and lzh files support ( see Etc. )
+-----------------------
+Key Assignes:
+-----------------------
+
+ Defualt keys.
+
+ [Keyborad]
+  Direction: Cursor Keys
+  A        : Z
+  B        : X
+  C        : C
+  Start    : Enter
+
+  And Joystic/Gmaepad will also work
+  A        :Botton 1
+  B        :Botton 2
+  C        :Botton 3
+  Start    :Botton 4
+
+
+-----------------------
+Menu bar
+-----------------------
+
+[File]
+Load ROM File   - Load rom
+Free ROM File   - Clear rom
+CPU Reset       - Reset the emulator
+Pause           - Toggle the emulator Pause/Continue
+Save State      - Save state
+Load State      - Load state
+State Bank(0-9) - state bank select
+About           - Show the current version of MEGASIS
+Exit            - Exit
+
+[FrameSkip]
+NoWait          - Don't wait for frame sync
+Auto            - Auto frameskip mode
+1Å`8            - Manual frameskip mode. Frameskip with the specified value
+Show Rate       - display frame skip rate
+
+[Screen]
+Full screen     - Full screen mode
+Window          - Window mode
+SurfaceMemoryType - default : use graphic board driver default setting
+                    SystemMemory : use system memory
+                    VideoMemory : use graphic board memory
+Size Fit  OFF   - Expand a geme screen into the whole of the window.
+          ON    - window mode only.
+          FULL  - window and fullscreen mode.
+x1-x4           - Specify the size of the screen.
+BG A,B          - Toggle each visual effect(Ex. BG,Sprite)
+Sprite,Window     Turn it all on usually
+SpriteOverEmu...- Sprite Over Clip ON.
+Shodow/Highlight- ON/OFF
+
+[Sound]
+on              - Enable the sound output
+off             - Disable the sound output
+UseSoftwareMix  - use system meory and software mixing
+monaural        - Monaural sound mode
+stereo          - Stereo sound mode
+11.025khz       - Set a sound rate to <number>khz
+22.050khz
+44.100khz
+Wave   Start    - Log "Sound.wav" file into "SAVE" directory.
+       Stop     - Stop to wave logging.
+YM2612 Start    - Log "YM2612.GYM" file into "SAVE" directory.
+YM2612 Stop     - Stop to Logging.
+YM2612 with PCM - Include PCM data into Ym2612 Log.
+Effect Echo     - Sound effect ON/OFF
+
+[Option]
+KeySetting      - Change Key Assignes.
+HotKeySetting   - Change menu shortcut key assignes.
+Checksum Fix    - fix to checksum
+Country         - Auto : Set up hardware automatically.
+                   (Distinguish the social conditions of a country report of the ROM)
+                  Japan , USA , Europe : select Japanese, American (USA) or European Machine
+
+68000 clock     - change 68000 cpu emulation clock
+68000 pause     - 68000 cpu emulation stop/continue
+Z80 pause       - Z80 cpu emulation stop/continue
+ 
+-----------------------
+Known bugs:
+-----------------------
+
+ It doesn't cope with 6 button pad, MultciTap,AnalogJoysitc, and so on.
+ It can't be developed at present because of lack of the materials.
+
+  and more.
+
+-----------------------
+Update history:
+-----------------------
+
+ 11/Nov/1998 ver.0.01
+-First Release. (alpha version)
+
+ 25/Dec/1998 ver.0.02
+-Fixed a 68000 CPU bug
+-Implemented Raster Scroll effects
+-Implemented H-interrupt process 
+-Added load/save SRAM data
+-Implemented Z80 CPU
+-Implemented PCM
+-Implemented FM timer
+
+ 08/Apr/1999  ver.0.03
+-Fixed 68000 CPU bug.
+-Fixed Z80 CPU bug.
+-Fixed Sprite priority.
+-Fixed Sound routine. (Change 16bit sound form 8bit sound.)
+-Fixed YM2612.
+-Fixed PSG.
+-Implemented Shadow,Hilight effect.
+-Implemented SpriteOverEmulation.
+-Implemented Controler 2 (Player 2)
+-Implemented YM2612 Logging.
+
+  05/Jun/1999  ver.0.04
+-Fixed 68000 CPU , and speed up
+-Fixed H-interrupt
+-Fixed FMTimer
+-Added LowQualityRasterEffect mode
+-Speed up to Drawing
+-Support 6Button
+-Support BankSelectRom(P-Star 4)
+-Support .gsv .ksb file read
+
+  27/Apr/2000  ver0.05
+-Added Save and Load state
+-Added BG Shadow,Hilight
+-Fixed 68000CPU
+-Fixed VDP
+-Fixed H-Int
+-Fixed Z80 CPU
+-Support FM-LFO (PMS only)
+-Added WaveLog
+-Added Menu shortcut key customize
+-Added Sound effect
+
+  18/Apr/2001  ver.0.06
+-fixed VDP emulation
+-added intelace mode2 emulation (320x448)
+-fixed Shadow/Highlight emulation
+-added 68000cpu clock setting
+-added surface memory type select
+-added NoWait emulation mode
+-fixed 68000cpu bug
+-added sound mixing mode
+-added zip,lzh files
+
+  19/Apr/2001  ver.0.06a
+-fixed input controller read bug
+-fixed zip,lzh file read bug
+
+
+-----------------------
+DISCLAIMER
+-----------------------
+
+ This program is freeware.
+ We take no responsibility for any damage or something, which may cause from
+ using this program -
+
+ YOU USE IT AT YOUR OWN RISK!
+
+-----------------------
+Etc.
+-----------------------
+HomePage
+  http://www.geocities.co.jp/Playtown-Spade/3163/
+
+ZIP,LZH files
+ The following DLLs are required to load ZIP and LZH files.
+
+ UNZIP32.DLL Ver 5.4x
+ UNLHA32.DLL Ver 1.54a
+
+ Common Archivers Library
+ http://www.csdinc.co.jp/archiver/
+ http://wakusei.cplaza.ne.jp/archiver/ (mirror)
+
+Mail
+  mailto:megasis@geocities.co.jp
+  (Sorry,maybe an answer to the mail written in English becomes very slow.)
+
+We apologize for our poor english.
+Thank you!

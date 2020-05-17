@@ -1,0 +1,36 @@
+Generator - Sega Genesis (Mega Drive) emulator
+Copyright (C) 1997-2003 James Ponder
+
+   Version: 0.35 DOS allegro binary release
+ Home page: http://www.squish.net/generator/
+
+Copyright
+=========
+
+This program is licensed to you according to the conditions within the file
+LICENSE.  Please read this license before continuing.
+
+Installation
+============
+
+dosgen [options] <rom>
+
+  -v <verbose level> can be: 0 = none, 1 = critical, 2 = normal, 3 = verbose
+  -d sound - turns on debug mode for sound
+  -l <sound latency> is the number of video fields worth of sound to
+     try to keep buffered (default 5)
+  -f <sound fragments> is the number of video fields worth of sound to
+     allow buffered (approx) (default 10)
+  -w <work dir> indicates where saved games are stored (default is current dir)
+  -c [<r>,<g>,<b>] sets the colour bit positions of where red, green and blue
+     5-bit values should be shifted to (default 10,5,0 for 15-bit modes)
+  -i <mode> selects de-interlace mode, one of: bob weave weave-filter
+  -k <x> forces the frame step (1=all frames, 2=every other, etc.)
+  -j <pad1>,<pad2> sets the input device for each joypad (default key0,none)
+  -s will save the ROM to the work directory in raw format
+
+  ROM types supported: .rom or .smd interleaved (autodetected)
+  Sound latency will be kept between -l and -a values. If you are having sound
+  problems try -l 20 -f 30
+
+This version of Generator uses an assember z80 written by Richard Mitton.

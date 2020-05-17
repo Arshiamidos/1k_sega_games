@@ -1,0 +1,37 @@
+Emulateur sega genesis/megadrive GENS
+Auteur : Stéphane Dallongeville
+
+email:	stef_d@caramail.com
+	stef0@multimania.com
+
+Le 14/01/2000
+Changements Version 0.15b <- 0.14a :
+
+- Ajout du frame skip.
+- Ajout du V-sync.
+- Correction du STATUS register du VDP.
+- Correction des lectures dans le VDP.
+- Quelques autres petites choses.
+
+60 % des roms fonctionnent bien.
+Le son ne fonctionne toujours pas :(
+
+Les touches pour jouer sont les suivantes (clavier AZERTY):
+
+		Joueur 1			Joueur 2
+
+	Haut		Z		Haut		Flèche Haut
+	Bas		S		Bas		Flèche Bas
+	Gauche		Q		Gauche		Flèche Gauche
+	Droite		D		Droite		Flèche Droite
+	Bouton A	F		Bouton A	K
+	Bouton B	G		Bouton B	L
+	Bouton C	H		Bouton C	M
+	Bouton X	R		Bouton X	I
+	Bouton Y	T		Bouton X	O
+	Bouton Z	Y		Bouton Z	P
+	Start		E		Start		Enter
+	Mode		A		Mode		Right Shift
+
+La touche ESPACE permet d'accéder au Debug Mode.
+La touche Echap de quitter.

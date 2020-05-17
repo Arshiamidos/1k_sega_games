@@ -1,0 +1,164 @@
+Gens v2.12 Movie 9z (Test version)
+
+based on Gens v2.12 source code by Stéphane Dallongeville and the Gens development team.
+http://gens.consolemul.com/
+This version is UNOFFICIAL.  Don't bother the official Gens community for problems and bugs.
+New in version 9z:
+	-Tweaked the timing of continuous frame advance (courtesy of Nitusja)
+	-Fixed a bug where the checkmark by Automatic Close Movie displayed incorrectly
+	-Fixed a bug where the last frame of input never got recorded.
+	-Emulation no longer pauses at the end of a movie when Automatic Close Movie is unchecked
+	-Added Savestate movie consistency checking (courtesy of Nitsuja)
+	-Sound no longer causes high CPU usage (courtesy of Nitsuja)
+	-Quicksaving during movies now prepends the name of the movie file (sans .gmv) to the savestate name
+	-Quickloading during movies now checks for a savestate with the movie file name (sans .gmv) prepended to it
+	-When Automatic Close Movie is unchecked, and a movie is open read-only, resetting will replay movie from start (even if movie had finished playing)
+	-When Automatic Close Movie is unchecked, and a movie is open read-write, resetting will rerecord movie from start (even if movie had finished playing)
+	-When Automatic Close Movie is unchecked, and a movie is open read-only after finishing playback, loading a state from the movie will resume playback from that state.
+	-When Automatic Close Movie is unchecked, and a movie is open read-write after finishing playback, loading a state from the movie will resume recording from that state.
+	-Added a Ram Search feature (courtesy of Nitsuja & Ideamagnate) with hardware accurate addresses (courtesy of me).
+	-Added a Ram Watch feature with watchlist saving and loading.
+	-Added several previously unsaved variables to savestates (courtesy of nitsuja)
+	-Added an input splice feature, to allow for rerecording while saving work past a specified point.
+	-Added a frameseek feature, which fastforwards to the specified frame, then pauses.
+
+New in version 9j:
+	-No longer warns on different controller settings (windows only)
+	-Warns on GMV controller settings unknown (windows only)
+	-Stretch while maintaining aspect ratio (doesn't work with full screen blits) (windows only)
+	-User definable full screen resolution in options->misc (doesn't work with full screen blits) (windows only)
+	-Option to fullscreen at windows resolution (windows only)
+	-Less cluttered menu style (Slowdown, AVI dumping, and movie playback moved to "TAS Tools" menu) (windows only)
+	-Movies can default to read-only checked (can be configured in config)
+	-Movies default to read-only checked can change in Options->Misc (Windows Only)
+	-Saves and loads slowdown speed from config
+	-Separate joypad config dialog to allow for reassignment of keys individually (instead of having to go in order "up down left right a b c start x y z mode") (windows only)
+	-Auto Pause on movie end if movie is not in read only mode (to allow for rerecording without having to reopen movie.)
+	-Option to disable movie autoclose (on console reset/movie end)
+	-Minor SegaCD savestate improvements.
+	-Nitsuja's changes from version 9i
+
+New in version 9i: (unreleased)
+	-Graphical layers can be enabled-disabled
+	-Sound-soften filters implemented
+	-Auto-hold feature implemented (Only works on controller 1 and 2)
+	-Auto-fire feature implemented (Only works on controlelr 1 and 2)
+	-Frame counter can optionally be displayed in frames instead of MM:SS:FF
+
+New in version 9h:
+	-Input settings automatically load from GMV unless unknown
+	-Three player input display using RGB channels
+		-In two player mode, Player 1 is Blue, Player 2 is Orange
+		-In three player mode, Player 1 is Blue, Player 1B is Green, Player 1C is Red
+	-Based off of the version of Gens with SegaCD savestate support
+
+New in version 9g:
+
+      -bulletproof rerecording (out-of-order loading shouldn't cause desync anymore)
+      -I think I caught a desync bug where a chunk of memory at the end of save states was never getting loaded...
+      -continuous frame advance (and no pause required, with sound)
+      -ctrl-T to toggle read-only (for switching to/from playback while recording)
+      -0-9 keys to load save states 0-9 (not F0-F9 like several other emulators, because the F keys were used for too many things already)
+      -shift+0-9 keys to save save states 0-9 (ctrl+0-9 to only select, now)
+      -=/- for speedup/slowdown (automatically switches in/out of "slowdown mode" as necessary)
+      -hold Tab to fast-forward (ctrl-shift-R to reset, now)
+      -it no longer uses 100% CPU when it doesn't need to (this is a big one for me)
+      -gave messages an outline (if you didn't set them to transparent) so they're not impossible to read on some bright backgrounds
+      -allows you to choose record or playback while a movie is already recording or playing, which properly stops the current movie when you hit OK
+
+New in version 9f:
+
+      -Fixed a bug which caused read only movies to be recorded when loading a state
+
+New in version 9e:
+
+      -Fixed a bug with 3 player movie playback
+
+New in version 9d:
+
+       -3 player support (check this option when recording a new movie.  To record with 3 players, set the first controller to teamplay and configure pads 1,1B and 1C (3 buttons setting only)
+       -Record new movie from now : Check this option when recording a new movie to make a savestate and record a new movie from it.  To play back the movie, use the Play from savestate option and load the associated savestate.
+       -New autobackup : Use use this option, check it on the Misc option dialog box.  A backup will be created when a savestate is loaded while playing a movie or when the option "Resume record from now" is selected.  The backup filename is (movie name).bak.gmv
+       -New Input display : Show the keys being pressed ! To use this option, go to the Misc option menu.
+       -Other little features i forgot about.
+
+New in Version Test9c:
+
+       -44khz is now the default sound rate
+       -Response time of redefined keys improved when the game is paused.
+       -Quickload and quicksave enabled when the game is paused
+       -AVI framerate of PAL games fixed. 
+       -Slowdown check in the menu fixed
+
+New in Version Test9b :
+       -Slowndown mode with sound disabled is now more constant
+       -New option in Graphic menu: "Never skip a frame with auto frameskip".
+       -You can now advance frames one by one when the game is paused.  To do it, first assign an Advance frame key in Options/Joypads... menu.
+      -You can now define a Movie path in Options/Directories... menu
+      -You can now disable the blue pause screen effect in Options/Misc... menu
+      -New framecounter.  To activate it, go in Option/Misc... menu.  Time is showed as minutes:seconds:frame.  You can change its position too.
+      -Read-only is now disable by default.
+      -If Read-only is disabled and you load a savestate while a movie is playing, the movie will switch to recording (like in Famtasia and Snes9X)
+      -Movies are automaticly closed on reset.
+      - A red circle will blink if a movie is being recorded.
+   
+
+Some notes about Test9a
+
+-Fix a random bug in header identification
+-AVI output (still WIP).
+
+To log a GMV to AVI : 
+
+	-Load the game
+	-Enable sound (if you want sound in your AVI)
+	-Set sound rate to 44khz (If you want sound in your AVI)
+	-In the Graphic menu, select Sync AVI with movie
+	-		   select Add sound to AVI (if you want)
+	-		   select Start AVI Dump
+	-Play the GMV file using Play Movie/Resume record from state menu
+	-A box will show asking video compression.  Select one.
+	-To stop AVI, select Stop AVI Dump
+
+(Warning : sound is uncompressed.  You might want to compress it with a video editing program like Virtualdub or Nandub.)
+	
+
+Some notes about Test9
+
+-New movie core.  All movies of all versions are still compatible
+-New movies have some new features: Author notes and controller configuration
+-To convert an old movie to the new movie format, use gmvtool9
+-New GUI
+-Options have changed place
+
+
+Record New Movie : Record a movie from the beginning 
+Play Movie / Resume record from savestate: Play a recorded movie file from the beginning, from a savestate or resume record of an existing movie from a savestate 
+Stop Movie : Stop playing/recording 
+Resume Record from now: Resume recording from already playing movie 
+Slow Mode : Slow down emulation.  Only with Auto framerate.
+Slow Mode Speed :  Select the speed of slow down mode
+
+Rerecording available with Load State, Save State 
+
+Toggle Slow Mode, Pause, Quicksave and Quickload are assignable to game keys
+
+----------------------------------- 	FAQ	----------------------------------------
+
+Q: Why my movie doesn't play back correctly ?  It's desyncing.
+
+A: The movie must be played in the same condition it has been recorded.  There are some settings  that are known to affect playback :
+
+	-Rom version
+	-Game pad configuration : 6 or 3 buttons ( doesn't affect earlier games)
+	-Sound enabled or disable
+	-Sound mixing frequency ( 11Khz , 22 Khz or 44Khz).  With NTSC, 44khz is recommended.  With PAL, 22khz and 44khz do fine
+	-Battery Backed RAM data
+
+Q: Why my movie played well the first time but not anymore ?
+
+A: It's because of the battery backed ram.  Delete the .srm file.  However, you'll lose your save data !
+
+Q: Why rerecording doesn't work with Sega CD ?
+
+A: Sega CD loading times are not constant, but framerate is. As a result loadtimes may take more or less frames during playback than they did during recording

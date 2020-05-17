@@ -1,0 +1,233 @@
+==============================================================
+
+    #####x#x##x         x###x###
+     x##     x##x     x##      x#                                 
+      ##       ###   ###               xxxx                       
+      ##        ##   ###             x#   ##   ###x#x##           
+      ##        ##x  ###      ####  ###x#x###  ###    ##          
+      ##       ###   ###       ###  ###        x##    ##          
+     ###      ###     ###x     ###   ##x       ##x   x##          
+    x#####x#x#x         ###x#x##      x###x    x##   ##x          
+                                                                  
+     it's all just a little bit of history repeating...
+
+==============================================================
+
+DGen is a Genesis/Megadrive emulator, which currently
+runs under for Windows 95/98/NT/2000 using DirectX.
+
+--------------------------------------------------------------
+NOTE - In the DOS version, press F1,F2 or F3 to strech the screen,
+F1 being the fastest. The DOS version doesn't have sound.
+Type dgen -help for more info on how to work it.
+The rest of this file refers to the Windows version.
+
+V1.04 (quick change)
+  The line across the middle of the screen was really annoying me,
+  so there's an option in dgen.ini (split_screen 0) if you
+  are not playing a horizontally split game.
+DOS version: Use dgen -nosplit
+
+V1.04 (21st May):
+
+This release is for one reason only: Interlace mode support!
+
+Also games which split the screen into top and bottom should now
+work (i.e. rough raster effects supported).
+It's a little bit faster now.
+  (By the way, put "fullscreen 1" in the dgen.ini for a considerable
+   performance increase. About 150% on my machine.)
+And it has pad 2 support.
+
+So basically,
+** THIS MEANS THAT THE SONIC 2 TWO_PLAYER MODE SHOULD NOW BE PLAYABLE! **
+As far as I know, no other Genesis emulator supports this. If you can
+confirm this, let me know.
+
+Even better, you can resize the screen to be roughly vertical to
+get rid of the distortion...
+...IN A WAY THIS SHOULD MAKE IT BETTER THAN THE ORIGINAL!
+Put "any_size 1" in dgen.ini to resize the screen to any rectangle.
+
+A few other fixes here and there. (e.g. Zerowing/Hellfire/RoadRash sprites)
+
+Bugs:
+  Big line across the middle of the screen. Use V1.02 if it annoys you!
+  (I know it annoys me!)
+  Even lines only in interlace mode - odd lines coming later.
+
+ BY THE WAY THE KEYS HAVE CHANGED
+
+  Pad 1:
+                     Y      = (Direction-pad)
+                   G H J
+(A B C) =  Z X C
+                 space = (Start)
+
+
+
+  Pad 2:
+
+Enter = (Start)  Del End PgDn = (A B C)
+                                       8      = Direction-pad
+                    (numeric keypad) 4 5 6
+
+V1.01: Added DGEN.INI file.
+
+Bugs
+----
+- Lots of graphical and playability glitches sadly.
+
+Once again, if DGen doesn't work for you, just don't use it.
+--------------------------------------------------------------
+
+
+(The name is spelt "Capital D, Captial G, small e, small n",
+and pronounced "Dee Jen".)
+
+At this point I'll slip in the old standard disclaimer:
+  I do not accept responsibility for any effects, adverse or otherwise,
+  that this code may have on you, your computer, your sanity, your dog, 
+  and anything else that you can think of. Use it at your own risk.
+
+Automatically created configuration file is DGEN.INI,
+which is usually create in the same directory
+as where you run it (but Windows can be a bit unpredictable so you
+may have to hunt around for it!).
+
+Q: How fast is it?
+A: Roughly speaking it compares like this:
+
+Slow                                         Fast/
+/Jerky graphics                              Smooth Graphics
+  <------------------------------------------>
+     Megasis          DGEN         Genecyst
+                                   KGen
+but hey - you can compare for yourself!
+Certainly works well on my P2-333.
+Runs terrible on a P1-150! (try increasing snd_segs)
+If you have a Pentium-I or below then I advise you to use KGen or Genecyst.
+If you have a Pentium-II 333 you should have no trouble.
+
+Q: Why use it rather than Genecyst and KGen?
+A: It has interlace mode support
+A1: DOS programs sometimes have trouble with newer graphics cards and
+   sound cards. (It's happened to me a couple of times.)
+A2: It's quite cool to be able to have a Genesis sound test
+    playing while you work - like I'm doing right now!
+    (Try increasing snd_segs in DGEN.INI if it skips.)
+
+Q: What's the compatibilty like?
+A: Not bad, but sound is missing from a lot of games sadly.
+
+Q: I'm still not convinced
+A: If DGen doesn't work for you, just don't use it.
+---------------------------------------------------------------
+*** How to use DGen *********************************************
+
+EASY WAY: Find your rom in Window's explorer, find DGen and
+drag and drop the rom onto it.
+Controls: Arrow keys, A, S, D and Return for the Start Button
+          Sorry, no joypad support yet.
+Exit by pressing Alt-F4, or clicking in the corner.
+
+If you have make a directory (folder) on your desktop called "save",
+DGen will save your game when you quit, and restore it when you load.
+Depending on the working directory you might have to make this
+directory somewhere else. This is why drag and drop isn't recommended,
+but if it works for you, great.
+
+RECOMMENDED WAY: Use the DOS command line, because then the save
+directory and DGEN.INI will be in the current directory, which doesn't clutter
+up your desktop.
+e.g.
+  cd \dgen
+  dgen demo.bin
+
+Shift-R resets.
+
+Press F1 to toggle "Crap TV emulation"(tm) (16-bit only, not 15-bit).
+This is a bit of a gag, but vastly
+improves the appearance of some games which use stippling/dithering!
+I would argue that Genesis games are not designed for square
+pixel monitors, and CTV mode looks more authentic... but that's just me!
+At the moment the filter slows things down a bit.
+
+F5 and F7 - save and load to "save\XXXX.gsx"
+(no confirmation is shown onscreen)
+Remember that "save\XXXX.gsx" is also written when you exit.
+
+.gsx files are a bit like gs0-gs9 save states, so you may be able
+to swap save states between emulators. Anyone got the actual
+specs for Genecyst or KGen save states?
+
+*****************************************************************
+                                                              
+4th May
+
+Dave's computer is back to normal!
+Thankyou thankyou thankyou for all your help!
+
+
+READ BEFORE E-MAILLING DAVE:
+
+  E-mail DOs and DON'Ts
+  ---------------------
+
+---DON'Ts:---------
+- No ROM requests of course!
+(there's no point since I literally just delete them on sight.)
+
+- Don't e-mail before you've read all the documentation and my web page.
+
+- No need to e-mail about lots of graphical or playability glitches
+since I probably know already.
+
+- Insults! (Just don't use DGen if you don't like it!)
+
+---DOs:------------
+- If you know what is CAUSING a mis-emulation (e.g. you are a Genesis
+  demo programmer or an Genesis emulator programmer) mail me at once!
+
+- If DGen works where another Genesis emu doesn't I'd love to know!
+
+- Praise! (hey - I'm a sucker for praise!)
+
+---------------
+
+Homepage might be one of these:
+  http://www.dtmnt.com/
+  http://www.emuunlim.com/dgen/
+Check them both.
+
+Dave's e-mail
+dave@dtmnt.com
+
+Technical Bits
+--------------
+
++ Scroll A/B Low/High and Window
++ Per screen offset supported
++ Per tile offset supported
+- Per line offset approximated by tile offset
++ 16-bit Stereo Sound (I think)
++ 68000 and Z80 supported
++ YM2612 supported (e.g. Music)
++ Z80 DAC supported (e.g. Drums and speech)
+- PSG chip NOT yet supported (e.g. extra music/sound bits)
+- Raster effects not supported (e.g. Toe-jam)
++ H-ints supported a bit (e.g. Moonwalker)
+
+Credits
+-------
+
+- Dave for putting it all together
+- Neill Corlett for the very fast StarScream 68000 emulator
+- Neil Bradley for the very fast Multi-Z80 emulator
+- Tatsuyuki Satoh for the YM2612 emulation
+- Dave for Genesis and VDP emulation
+- Dave for the C++/assembler graphics rendering.
+- Microsoft's *good* programmers who seem to have designed DirectX
+  but not everything else that Microsoft produce.
+
+--------------
